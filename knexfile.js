@@ -2,10 +2,10 @@ module.exports = {
   development: {
     client: "pg",
     connection: {
-      host: "heffalump.db.elephantsql.com",
-      user: "slhgiuzg",
-      password: "ULb_uKAj-Rf0Kei7jQRL8yHKs__EBh3d",
-      database: "slhgiuzg",
+      host: process.env.DATABASE_HOST,
+      user: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_USER,
       port: 5432,
     },
     pool: {
@@ -19,10 +19,10 @@ module.exports = {
   additionalDatabase: {
     client: "pg",
       connection: {
-        host: "heffalump.db.elephantsql.com",
-        user: "izoagnxs",
-        password: "aOKsevjpaXl4aEvmTlNJ1DY06hlFftMB",
-        database: "izoagnxs",
+        host: process.env.DATABASE_HOST2,
+        user: process.env.DATABASE_USER2,
+        password: process.env.DATABASE_PASSWORD2,
+        database: process.env.DATABASE_USER2,
         port: 5432,
       },
       pool: {
