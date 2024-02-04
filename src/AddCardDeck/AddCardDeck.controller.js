@@ -1,6 +1,6 @@
 require('dotenv').config();
 const knex = require('knex')(require('../../knexfile').development);
-const {addCardPackToDatabase, getCardPackFromDatabase, deleteCardPackFromDatabase} = require('./db');
+const {addCardPackToDatabase, getCardPackFromDatabase, deleteCardPackFromDatabase, editCardPackFromDatabase} = require('./db');
 
 
 const getCardPack = async (req, res) => {
@@ -35,9 +35,22 @@ const addCardPack = async (req, res) => {
     }
 }
 
+const editCardPack = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const {creator, packType, packName, packImageURL} = req.body;
+        const updatedPack = await editCardPackFromDatabase(id, creator, packType, packName, packImageURL);
+        res.status(200).json(updatedPack)
+    } catch (error) {
+        console.error(`error: Error updating card pack ${error}`)
+        res.status(500).json({error: error.message})
+    }
+
+}
 
 module.exports = {
     getCardPack,
     deleteCardPack,
-    addCardPack 
+    addCardPack,
+    editCardPack
 }

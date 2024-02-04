@@ -29,8 +29,8 @@ app.set('additionalDb', additionalPool);
 pool.connect()
 app.use(cors())
 app.use(express.json());
-app.use('/api/packs', cardPackRouter);
-app.use('/api/packs/:packId/cards', addCardToPackRouter);
+app.use('/api/pack', cardPackRouter);
+app.use('/api/pack', addCardToPackRouter);
 
 
 module.exports = app;

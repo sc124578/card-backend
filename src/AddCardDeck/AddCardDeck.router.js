@@ -7,6 +7,8 @@ router.get('/', cardPackController.getCardPack);
 
 router.post('/', cardPackController.addCardPack);
 
-router.delete('/:id', cardPackController.deleteCardPack);
+router.delete('/deletePack/:id', cardPackController.deleteCardPack);
+
+router.put('/:id', cardPackController.editCardPack);
 
 module.exports = router;

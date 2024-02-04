@@ -9,9 +9,13 @@ const getCardPackFromDatabase = async () => {
 const deleteCardPackFromDatabase = async (id) => {
     return await knex('pack_maker').where({id}).del().returning('*');
 }
+const editCardPackFromDatabase = async (id, creator, packType, packName, packImageURL) => {
+    return await knex('pack_maker').where({id}).update({creator, packType, packName, packImageURL}).returning('*');
+}
 
 module.exports = {
     addCardPackToDatabase,
     getCardPackFromDatabase,
-    deleteCardPackFromDatabase
+    deleteCardPackFromDatabase,
+    editCardPackFromDatabase
 }
