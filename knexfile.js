@@ -1,6 +1,6 @@
 module.exports = {
   development: {
-    client: "pg",
+    client: 'pg',
     connection: {
       host: 'heffalump.db.elephantsql.com',
       user: 'slhgiuzg',
@@ -10,27 +10,27 @@ module.exports = {
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      directory:  "./migrations/"
+      directory: './migrations/',
     },
   },
   additionalDatabase: {
-    client: "pg",
-      connection: {
-        host: 'heffalump.db.elephantsql.com',
-        user: 'izoagnxs',
-        password: 'aOKsevjpaXl4aEvmTlNJ1DY06hlFftMB',
-        database: 'izoagnxs',
-        port: 5432,
-      },
-      pool: {
-        min: 2,
-        max: 10
-      },
-      migrations: {
-        directory:  "./migrations2"
-      },
-  }
-}
+    client: 'pg',
+    connection: {
+      host: 'heffalump.db.elephantsql.com',
+      user: 'izoagnxs',
+      password: 'aOKsevjpaXl4aEvmTlNJ1DY06hlFftMB',
+      database: 'izoagnxs',
+      port: 5432,
+    },
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: './migrations2/',
+    },
+  },
+};
