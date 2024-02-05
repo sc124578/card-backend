@@ -1,36 +1,38 @@
+const { PureComponent } = require("react");
+
 module.exports = {
   development: {
-    client: 'pg',
+    client: "pg",
     connection: {
-      host: 'heffalump.db.elephantsql.com',
-      user: 'slhgiuzg',
-      password: 'ULb_uKAj-Rf0Kei7jQRL8yHKs__EBh3d',
-      database: 'slhgiuzg',
+      host: process.env.DATABASE_HOST,
+      user: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_USER,
       port: 5432,
     },
     pool: {
       min: 2,
-      max: 10,
+      max: 10
     },
     migrations: {
-      directory: './migrations/',
+      directory:  "./migrations/"
     },
   },
   additionalDatabase: {
-    client: 'pg',
-    connection: {
-      host: 'heffalump.db.elephantsql.com',
-      user: 'izoagnxs',
-      password: 'aOKsevjpaXl4aEvmTlNJ1DY06hlFftMB',
-      database: 'izoagnxs',
-      port: 5432,
-    },
-    pool: {
-      min: 2,
-      max: 10,
-    },
-    migrations: {
-      directory: './migrations2/',
-    },
-  },
-};
+    client: "pg",
+      connection: {
+        host: process.env.DATABASE_HOST2,
+        user: process.env.DATABASE_USER2,
+        password: process.env.DATABASE_PASSWORD2,
+        database: process.env.DATABASE_USER2,
+        port: 5432,
+      },
+      pool: {
+        min: 2,
+        max: 10
+      },
+      migrations: {
+        directory:  "./migrations2"
+      },
+  }
+}
